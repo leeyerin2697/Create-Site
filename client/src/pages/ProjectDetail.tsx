@@ -74,11 +74,27 @@ export default function ProjectDetail() {
               ))}
             </div>
 
-            <a href={project.link || "https://github.com/leeyerin2697"} target="_blank" rel="noopener noreferrer">
-              <Button className="rounded-full px-8" size="lg">
-                View on GitHub <ExternalLink className="ml-2 w-4 h-4" />
-              </Button>
-            </a>
+            <div className="flex flex-wrap gap-4">
+              <a href={project.link || "https://github.com/leeyerin2697"} target="_blank" rel="noopener noreferrer">
+                <Button className="rounded-full px-8" size="lg">
+                  View on GitHub <ExternalLink className="ml-2 w-4 h-4" />
+                </Button>
+              </a>
+              {project.id === 'manual-processing' && (
+                <a href="/posters/proj1_poster.pdf" target="_blank" rel="noopener noreferrer">
+                  <Button variant="secondary" className="rounded-full px-8" size="lg">
+                    View Poster <ExternalLink className="ml-2 w-4 h-4" />
+                  </Button>
+                </a>
+              )}
+              {project.id === 'hydropower-ml' && (
+                <a href="/posters/proj2_poster.pdf" target="_blank" rel="noopener noreferrer">
+                  <Button variant="secondary" className="rounded-full px-8" size="lg">
+                    View Poster <ExternalLink className="ml-2 w-4 h-4" />
+                  </Button>
+                </a>
+              )}
+            </div>
           </div>
         </section>
 
