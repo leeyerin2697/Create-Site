@@ -100,14 +100,14 @@ export default function ProjectDetail() {
             <div className="max-w-3xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="relative rounded-2xl overflow-hidden border border-white/10 shadow-2xl">
                 <img 
-                  src="/images/project2-thumb.jpg" 
+                  src="/images/hydro-dam.png" 
                   alt="Hydropower system diagram" 
                   className="w-full h-auto"
                 />
               </div>
               <div className="relative rounded-2xl overflow-hidden border border-white/10 shadow-2xl">
                 <img 
-                  src="/images/hydro-dam.png" 
+                  src="/images/project2-poster.jpg" 
                   alt="Project poster" 
                   className="w-full h-auto"
                 />
