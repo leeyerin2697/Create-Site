@@ -98,18 +98,18 @@ export default function ProjectDetail() {
             </div>
           ) : project.id === 'hydropower-ml' ? (
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div className="relative rounded-2xl overflow-hidden border border-white/10 shadow-2xl h-64 md:h-80">
+              <div className="relative rounded-2xl overflow-hidden border border-white/10 shadow-2xl">
                 <img 
                   src="/images/project2-thumb.jpg" 
                   alt="Hydropower system diagram" 
-                  className="w-full h-full object-cover"
+                  className="w-full h-auto"
                 />
               </div>
-              <div className="relative rounded-2xl overflow-hidden border border-white/10 shadow-2xl h-64 md:h-80">
+              <div className="relative rounded-2xl overflow-hidden border border-white/10 shadow-2xl">
                 <img 
                   src="/images/project2-poster.jpg" 
                   alt="Project poster" 
-                  className="w-full h-full object-contain bg-white"
+                  className="w-full h-auto"
                 />
               </div>
             </div>
