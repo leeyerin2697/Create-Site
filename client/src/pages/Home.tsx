@@ -64,8 +64,8 @@ export default function Home() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {projects.map((project, index) => (
-              <Link key={project.id} href={`/project/${project.id}`} className="block" style={{ animationDelay: `${index * 100}ms` }}>
-                <div className="group cursor-pointer transition-all duration-500 ease-out transform translate-y-4 opacity-0 animate-fade-in-up" style={{ animationDelay: `${index * 100}ms` }}>
+              <Link key={project.id} href={`/project/${project.id}`} className="block animate-fade-in-up" style={{ animationDelay: `${index * 100}ms` }}>
+                <div className="group cursor-pointer">
                   <Card className="h-full bg-card/50 backdrop-blur-md border-white/10 overflow-hidden transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl hover:border-primary/50">
                     <div className="relative h-64 overflow-hidden">
                       <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
