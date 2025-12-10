@@ -530,8 +530,39 @@ function HydropowerMLContent({ project }: { project: any }) {
               The Random Forest Regressor significantly outperformed the simpler Linear and Polynomial Regression models, achieving a high predictive accuracy with an R² value greater than 0.95. The results showed that increasing the tree depth generally improved the model's accuracy. Furthermore, the feature importance analysis clearly identified total discharge, storage volume, and water level as the top three most influential factors in predicting turbine discharge.
             </p>
 
-            {/* Images */}
-            <div className="grid grid-cols-3 gap-4">
+	            {/* Feature Importance Table */}
+	            <div className="bg-white/5 border border-white/10 rounded-xl p-8 space-y-4">
+	              <h3 className="text-xl font-semibold">Feature Importance (Random Forest)</h3>
+	              <div className="overflow-x-auto">
+	                <table className="w-full text-left table-auto">
+	                  <thead>
+	                    <tr className="border-b border-white/10 text-primary">
+	                      <th className="py-2 px-4">Feature</th>
+	                      <th className="py-2 px-4">Importance</th>
+	                    </tr>
+	                  </thead>
+	                  <tbody>
+	                    {[
+	                      { feature: 'total_discharge', importance: 0.667377 },
+	                      { feature: 'storage_volume', importance: 0.146111 },
+	                      { feature: 'water_level', importance: 0.089525 },
+	                      { feature: 'inflow_rate', importance: 0.038206 },
+	                      { feature: 'storage_ratio', importance: 0.031423 },
+	                      { feature: 'cumulative_rainfall', importance: 0.020250 },
+	                      { feature: 'rainfall', importance: 0.007108 },
+	                    ].map((row, i) => (
+	                      <tr key={i} className="border-b border-white/5 text-muted-foreground">
+	                        <td className="py-2 px-4">{row.feature}</td>
+	                        <td className="py-2 px-4">{row.importance}</td>
+	                      </tr>
+	                    ))}
+	                  </tbody>
+	                </table>
+	              </div>
+	            </div>
+
+	            {/* Images */}
+	            <div className="grid grid-cols-3 gap-4">
               <div className="relative rounded-xl overflow-hidden border border-white/10 shadow-xl h-auto">
                 <img src="/images/linear_actual_vs_pred.png" alt="Actual vs Predicted Scatter Plot" className="w-full h-full object-cover" />
               </div>
