@@ -161,7 +161,7 @@ export const projects: Project[] = [
       - U.S. Energy Information Administration - Hydropower
       - K-water official resources
     `,
-    imageUrl: "/images/project2-thumb.jpg",
+    imageUrl: "/images/project2-poster.jpg",
     tags: ["Machine Learning", "Hydropower", "Python", "Random Forest", "Data Science"],
     link: "https://github.com/leeyerin2697/Dam-power-prediction"
   }
