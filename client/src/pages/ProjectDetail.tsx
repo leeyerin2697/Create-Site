@@ -54,29 +54,42 @@ export default function ProjectDetail() {
               ))}
             </div>
 
-            <Button className="rounded-full px-8" size="lg">
-              View on GitHub <ExternalLink className="ml-2 w-4 h-4" />
-            </Button>
+            <a href="https://github.com/leeyerin2697/ManualSummaryApp" target="_blank" rel="noopener noreferrer">
+              <Button className="rounded-full px-8" size="lg">
+                View on GitHub <ExternalLink className="ml-2 w-4 h-4" />
+              </Button>
+            </a>
           </div>
         </section>
 
         {/* Project Image */}
-        <section className="container mx-auto px-4 py-12">
-          <div className="relative rounded-2xl overflow-hidden border border-white/10 shadow-2xl h-96 md:h-[500px]">
-            {project.id === 'project1' ? (
-              <img 
-                src="/images/project1-demo.gif" 
-                alt={project.title} 
-                className="w-full h-full object-cover"
-              />
-            ) : (
+        <section className="container mx-auto px-4 py-12 animate-fade-in-up">
+          {project.id === 'manual-processing' ? (
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="relative rounded-2xl overflow-hidden border border-white/10 shadow-2xl h-64 md:h-80">
+                <img 
+                  src="/images/project1-thumb-1.jpg" 
+                  alt="Project image 1" 
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <div className="relative rounded-2xl overflow-hidden border border-white/10 shadow-2xl h-64 md:h-80">
+                <img 
+                  src="/images/project1-detail-new.jpg" 
+                  alt="Project image 2" 
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            </div>
+          ) : (
+            <div className="relative rounded-2xl overflow-hidden border border-white/10 shadow-2xl h-96 md:h-[500px]">
               <img 
                 src={project.imageUrl} 
                 alt={project.title} 
                 className="w-full h-full object-cover"
               />
-            )}
-          </div>
+            </div>
+          )}
         </section>
 
         {/* Main Content */}
@@ -84,7 +97,7 @@ export default function ProjectDetail() {
           <div className="max-w-4xl mx-auto space-y-24">
             
             {/* Motivation Section */}
-            <div className="space-y-8">
+            <div className="space-y-8 animate-fade-in-up">
               <div>
                 <h2 className="text-4xl font-bold mb-4">Motivation & Problem Definition</h2>
                 <div className="h-1 w-20 bg-gradient-to-r from-primary to-transparent rounded-full mb-8" />
@@ -125,7 +138,7 @@ export default function ProjectDetail() {
             <div className="h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
 
             {/* Method Section */}
-            <div className="space-y-8">
+            <div className="space-y-8 animate-fade-in-up">
               <div>
                 <h2 className="text-4xl font-bold mb-4">Method</h2>
                 <div className="h-1 w-20 bg-gradient-to-r from-primary to-transparent rounded-full mb-8" />
@@ -153,7 +166,8 @@ export default function ProjectDetail() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   {[
                     { name: 'Tesseract OCR', desc: 'Accurate text extraction from manual images' },
-                    { name: 'DeepSeek Chat API + gTTS', desc: 'Korean summarization and audio synthesis' }
+                    { name: 'DeepSeek Chat API', desc: 'Korean summarization' },
+                    { name: 'gTTS', desc: 'Audio synthesis' }
                   ].map((model, i) => (
                     <div key={i} className="bg-white/5 border border-white/10 rounded-xl p-6 space-y-2">
                       <h4 className="font-semibold text-primary">{model.name}</h4>
@@ -196,7 +210,7 @@ export default function ProjectDetail() {
             <div className="h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
 
             {/* Results Section */}
-            <div className="space-y-8">
+            <div className="space-y-8 animate-fade-in-up">
               <div>
                 <h2 className="text-4xl font-bold mb-4">Results</h2>
                 <div className="h-1 w-20 bg-gradient-to-r from-primary to-transparent rounded-full mb-8" />
@@ -265,7 +279,7 @@ export default function ProjectDetail() {
             <div className="h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
 
             {/* Discussion Section */}
-            <div className="space-y-8">
+            <div className="space-y-8 animate-fade-in-up">
               <div>
                 <h2 className="text-4xl font-bold mb-4">Discussion & Future Work</h2>
                 <div className="h-1 w-20 bg-gradient-to-r from-primary to-transparent rounded-full mb-8" />
@@ -310,7 +324,7 @@ export default function ProjectDetail() {
             <div className="h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
 
             {/* References Section */}
-            <div className="space-y-8">
+            <div className="space-y-8 animate-fade-in-up">
               <div>
                 <h2 className="text-4xl font-bold mb-4">References & Acknowledgement</h2>
                 <div className="h-1 w-20 bg-gradient-to-r from-primary to-transparent rounded-full mb-8" />
@@ -334,14 +348,16 @@ export default function ProjectDetail() {
             </div>
 
             {/* CTA Section */}
-            <div className="bg-gradient-to-r from-primary/20 to-secondary/20 border border-white/10 rounded-2xl p-12 text-center space-y-6">
+            <div className="bg-gradient-to-r from-primary/20 to-secondary/20 border border-white/10 rounded-2xl p-12 text-center space-y-6 animate-fade-in-up">
               <h3 className="text-3xl font-bold">Ready to Explore?</h3>
               <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
                 Check out the full source code and documentation on GitHub.
               </p>
-              <Button className="rounded-full px-8" size="lg">
-                View Source Code <ExternalLink className="ml-2 w-4 h-4" />
-              </Button>
+              <a href="https://github.com/leeyerin2697/ManualSummaryApp" target="_blank" rel="noopener noreferrer">
+                <Button className="rounded-full px-8" size="lg">
+                  View Source Code <ExternalLink className="ml-2 w-4 h-4" />
+                </Button>
+              </a>
             </div>
           </div>
         </section>
