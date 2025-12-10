@@ -92,66 +92,77 @@ export const projects: Project[] = [
     link: "https://github.com/leeyerin2697"
   },
   {
-    id: "sbsp-research",
-    title: "Space-Based Solar Power (SBSP) Research",
-    description: "Research on technical challenges and feasibility of space-based solar power systems for sustainable energy.",
+    id: "hydropower-ml",
+    title: "Hydropower Turbine Discharge Prediction",
+    description: "Machine learning model that predicts turbine discharge based on real K-water dam data to support hydropower forecasting and operation planning.",
     fullDescription: `
       Introduction & Motivation
       
-      Space-Based Solar Power (SBSP) represents a promising frontier in renewable energy technology. Unlike terrestrial solar systems limited by weather, time of day, and atmospheric conditions, SBSP systems can generate power continuously in space and transmit it to Earth via microwave or laser beams.
+      Hydropower generation depends heavily on how much water flows through the turbine (turbine discharge). However, turbine discharge is influenced by multiple hydrological and operational factors, and real dam operations are nonlinear and complex.
       
-      This research explores the technical challenges, feasibility analysis, and implementation strategies required to make SBSP a viable energy solution for the future.
+      Goal of this project:
+      To build a machine learning model that predicts turbine discharge based on real K-water dam data and evaluate which model performs best.
       
       Why it matters:
-      - Provides continuous, weather-independent power generation
-      - Offers virtually unlimited solar energy collection in space
-      - Addresses global energy demands sustainably
-      - Requires innovative solutions in materials, transmission, and control systems
+      - Helps understand operational behavior of dam
+      - Supports hydropower forecasting & operation planning
+      - Demonstrates how ML handles real-world nonlinear systems
       
       Method
       
-      Research Approach:
-      - Literature review of existing SBSP concepts and prototypes
-      - Analysis of key technical challenges (power transmission, orbital mechanics, materials)
-      - Feasibility assessment of current and near-future technologies
-      - Identification of critical research areas for commercialization
+      Idea & Motivation:
+      Hydropower output depends on turbine discharge. The goal is to build a model that predicts turbine discharge using real dam operation data.
       
-      Key Research Areas:
-      - Wireless Power Transmission: microwave and laser-based energy beaming
-      - Orbital Mechanics: optimal satellite constellation design
-      - Materials Science: lightweight, radiation-resistant materials for space
-      - Power Electronics: efficient conversion and transmission systems
-      - Regulatory & Economic: cost analysis and policy frameworks
+      Dataset Construction:
+      - Dataset: K-water Daily Hydrological Data (421,451 entries), csv format
+      - Preprocessing: Remove missing data, filter out nonphysical values (≤0), randomly sample 50,000 rows
+      - Input (X): hydrological & operational variables
+      - Output (y): turbine discharge
+      
+      Model Development:
+      Compared three models:
+      - Linear Regression
+      - Polynomial Regression (degree = 2)
+      - Random Forest Regressor
+      
+      Result Analysis:
+      - Trained and tested with 80/20 split
+      - Evaluated performance using RMSE, MAE, R²
+      - Scatter plots (Actual vs Predicted)
+      - Error comparison charts
+      - Feature importance ranking
+      - Hyperparameter experiment
+      
+      Distribution:
+      Full code and analysis provided via GitHub. Random Forest achieves R² > 0.95, providing a foundation for hydropower operation prediction tools.
       
       Results
       
-      - Identified critical technical bottlenecks in wireless power transmission efficiency
-      - Analyzed trade-offs between microwave and laser transmission methods
-      - Assessed the feasibility of current space technology for SBSP deployment
-      - Documented potential timelines for prototype development and commercialization
+      - Random Forest achieved R² > 0.95, demonstrating excellent predictive performance
+      - Best configuration: n_estimators = 50, max_depth = 20 → RMSE = 11.48, R² = 0.962
+      - Model accuracy increased as tree depth increased
+      - Feature importance: total discharge most influential, followed by storage volume and water level
       
       Discussion & Future Work
       
-      Key Findings:
-      - SBSP is technically feasible with current technology, though efficiency improvements are needed
-      - Wireless power transmission remains the primary technical challenge
-      - International cooperation and regulatory frameworks are essential for deployment
+      Key Takeaways:
+      - Linear and polynomial models fail to capture nonlinear dam behavior
+      - Random Forest performs the best with very low error
+      - Total discharge, storage volume, and water level strongly influence turbine discharge
       
-      Future Research Directions:
-      - Develop high-efficiency wireless power transmission systems
-      - Design and test orbital satellite prototypes
-      - Investigate advanced materials for space applications
-      - Explore hybrid SBSP-terrestrial energy systems
-      - Establish international standards for space-based energy transmission
+      Future Improvements:
+      - Include hydraulic head (H) as a feature
+      - Try gradient boosting or neural networks
+      - Consider seasonal or temporal effects
       
       References
-      - Recent SBSP feasibility studies and technical reports
-      - Wireless power transmission research papers
-      - Orbital mechanics and satellite design literature
-      - Space materials science publications
+      - K-water hydrological operation data (한국수자원공사_수문현황정보_일별)
+      - scikit-learn documentation
+      - U.S. Energy Information Administration - Hydropower
+      - K-water official resources
     `,
     imageUrl: "/images/project2-thumb.jpg",
-    tags: ["SBSP", "Renewable Energy", "Space Technology", "Research"],
-    link: "#"
+    tags: ["Machine Learning", "Hydropower", "Python", "Random Forest", "Data Science"],
+    link: "https://github.com/leeyerin2697/Dam-power-prediction"
   }
 ];
