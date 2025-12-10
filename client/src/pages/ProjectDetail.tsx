@@ -266,13 +266,22 @@ export default function ProjectDetail() {
               </div>
 
               {/* Results Image */}
-              <div className="relative rounded-2xl overflow-hidden border border-white/10 shadow-2xl h-96 md:h-[500px]">
-                <img 
-                  src="/images/project1-result-new.gif" 
-                  alt="Results visualization" 
-                  className="w-full h-full object-cover"
-                />
-              </div>
+              <a href="https://youtu.be/SUHL4aNiLAk" target="_blank" rel="noopener noreferrer" className="block group">
+                <div className="relative rounded-2xl overflow-hidden border border-white/10 shadow-2xl h-96 md:h-[500px] cursor-pointer transition-all duration-300 hover:shadow-2xl hover:border-primary/50">
+                  <img 
+                    src="/images/project1-result-new.gif" 
+                    alt="Results visualization - Click to watch demo" 
+                    className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-colors duration-300 flex items-center justify-center">
+                    <div className="w-16 h-16 rounded-full bg-primary/0 group-hover:bg-primary transition-colors duration-300 flex items-center justify-center">
+                      <svg className="w-8 h-8 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M8 5v14l11-7z" />
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </a>
             </div>
 
             {/* Divider */}
