@@ -107,7 +107,7 @@ export default function ProjectDetail() {
               </div>
               <div className="relative rounded-2xl overflow-hidden border border-white/10 shadow-2xl">
                 <img 
-                  src="/images/project2-poster.jpg" 
+                  src="/images/hydro-dam.png" 
                   alt="Project poster" 
                   className="w-full h-auto"
                 />
