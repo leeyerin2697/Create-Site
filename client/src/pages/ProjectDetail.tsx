@@ -51,6 +51,11 @@ export default function ProjectDetail() {
               <h1 className="text-5xl md:text-6xl font-bold tracking-tight leading-tight">
                 {project.title}
               </h1>
+              {project.id === 'manual-processing' && (
+                <p className="text-sm text-muted-foreground italic">
+                  Author: Yerin Lee (20240381) | KENTECH, School of Energy Engineering
+                </p>
+              )}
               <p className="text-xl text-muted-foreground">
                 {project.description}
               </p>
@@ -150,9 +155,7 @@ function ManualProcessingContent({ project }: { project: any }) {
           </div>
 
           <div className="space-y-6">
-              <p className="text-sm text-muted-foreground leading-relaxed mb-4">
-                Author: Yerin Lee (20240381) | KENTECH, School of Energy Engineering
-              </p>
+
               <p className="text-lg text-muted-foreground leading-relaxed">
               Many user manuals have small, dense text, making them difficult and tiring to read. Some manuals are also written in English, creating a language barrier for Korean users.
             </p>
@@ -202,8 +205,8 @@ function ManualProcessingContent({ project }: { project: any }) {
                   <div className="bg-primary/20 border border-primary/50 rounded-lg px-6 py-3 text-center font-semibold whitespace-nowrap">
                     {step}
                   </div>
-                  {i < 2 && <div className="hidden md:block h-px w-16 bg-primary/50 mx-2" />}
-                  {i < 2 && <div className="md:hidden h-16 w-px bg-primary/50 my-2" />}
+                  {i < 2 && <div className="hidden md:block h-px w-full bg-primary/50" />}
+                  {i < 2 && <div className="md:hidden h-full w-px bg-primary/50" />}
                 </div>
               ))}
             </div>
