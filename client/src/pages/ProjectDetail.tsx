@@ -504,36 +504,103 @@ function HydropowerMLContent({ project }: { project: any }) {
           </div>
 
           <div className="space-y-6">
-            {/* Performance Highlight */}
-            <div className="bg-gradient-to-r from-primary/20 to-secondary/20 border border-primary/30 rounded-xl p-8 space-y-4">
-              <h3 className="text-2xl font-bold">Random Forest Performance</h3>
-              <p className="text-lg text-muted-foreground">
-                Random Forest achieved <strong className="text-primary">R² &gt; 0.95</strong>, demonstrating excellent predictive performance.
-              </p>
+            {/* Overview Paragraph */}
+            <p className="text-lg text-muted-foreground leading-relaxed">
+              The Random Forest Regressor significantly outperformed the simpler Linear and Polynomial Regression models, achieving a high predictive accuracy with an **R² value greater than 0.95**. The results showed that increasing the tree depth generally improved the model's accuracy. Furthermore, the feature importance analysis clearly identified **total discharge, storage volume, and water level** as the top three most influential factors in predicting turbine discharge.
+            </p>
+
+            {/* Images */}
+            <div className="grid grid-cols-3 gap-4">
+              <div className="relative rounded-xl overflow-hidden border border-white/10 shadow-xl h-auto">
+                <img src="/images/project2-result-1.png" alt="Actual vs Predicted Scatter Plot" className="w-full h-full object-cover" />
+              </div>
+              <div className="relative rounded-xl overflow-hidden border border-white/10 shadow-xl h-auto">
+                <img src="/images/project2-result-2.png" alt="Feature Importance Ranking" className="w-full h-full object-cover" />
+              </div>
+              <div className="relative rounded-xl overflow-hidden border border-white/10 shadow-xl h-auto">
+                <img src="/images/project2-result-3.png" alt="Error Comparison Chart" className="w-full h-full object-cover" />
+              </div>
             </div>
 
-            {/* Performance Metrics */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-              {[
-                { label: 'n_estimators', value: '50' },
-                { label: 'max_depth', value: '20' },
-                { label: 'RMSE', value: '11.48' },
-                { label: 'R²', value: '0.962' }
-              ].map((metric, i) => (
-                <div key={i} className="bg-white/5 border border-white/10 rounded-xl p-6 text-center">
-                  <p className="text-sm text-muted-foreground mb-2">{metric.label}</p>
-                  <p className="text-3xl font-bold text-primary">{metric.value}</p>
-                </div>
-              ))}
+            {/* Hyperparameter Tuning Table */}
+            <div className="bg-white/5 border border-white/10 rounded-xl p-8 space-y-4">
+              <h3 className="text-xl font-semibold">Random Forest Hyperparameter Tuning</h3>
+              <div className="overflow-x-auto">
+                <table className="w-full text-left table-auto">
+                  <thead>
+                    <tr className="border-b border-white/10 text-primary">
+                      <th className="py-2 px-4">n_estimators</th>
+                      <th className="py-2 px-4">max_depth</th>
+                      <th className="py-2 px-4">RMSE</th>
+                      <th className="py-2 px-4">R²</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {[
+                      { n: 10, d: 5, rmse: 25.26, r2: 0.816, best: false },
+                      { n: 10, d: 10, rmse: 12.88, r2: 0.952, best: false },
+                      { n: 10, d: 20, rmse: 12.11, r2: 0.958, best: false },
+                      { n: 50, d: 5, rmse: 25.30, r2: 0.815, best: false },
+                      { n: 50, d: 10, rmse: 12.71, r2: 0.953, best: false },
+                      { n: 50, d: 20, rmse: 11.48, r2: 0.962, best: true }, // Best
+                      { n: 100, d: 5, rmse: 25.45, r2: 0.813, best: false },
+                      { n: 100, d: 10, rmse: 12.75, r2: 0.953, best: false },
+                      { n: 100, d: 20, rmse: 11.56, r2: 0.961, best: false },
+                    ].map((row, i) => (
+                      <tr key={i} className={`border-b border-white/5 ${row.best ? 'bg-primary/20 font-bold text-primary' : 'text-muted-foreground'}`}>
+                        <td className="py-2 px-4">{row.n}</td>
+                        <td className="py-2 px-4">{row.d}</td>
+                        <td className="py-2 px-4">{row.rmse}</td>
+                        <td className="py-2 px-4">{row.r2}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
             </div>
 
-            {/* Key Findings */}
+            {/* Model Comparison Table */}
+            <div className="bg-white/5 border border-white/10 rounded-xl p-8 space-y-4">
+              <h3 className="text-xl font-semibold">Model Comparison</h3>
+              <div className="overflow-x-auto">
+                <table className="w-full text-left table-auto">
+                  <thead>
+                    <tr className="border-b border-white/10 text-primary">
+                      <th className="py-2 px-4">Model</th>
+                      <th className="py-2 px-4">MSE</th>
+                      <th className="py-2 px-4">RMSE</th>
+                      <th className="py-2 px-4">MAE</th>
+                      <th className="py-2 px-4">R²</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {[
+                      { model: 'Linear Regression', mse: 1933.24, rmse: 43.97, mae: 23.06, r2: 0.441 },
+                      { model: 'Polynomial Regression', mse: 1593.74, rmse: 39.92, mae: 19.73, r2: 0.539 },
+                      { model: 'Random Forest', mse: 165.10, rmse: 12.85, mae: 5.17, r2: 0.952, best: true },
+                    ].map((row, i) => (
+                      <tr key={i} className={`border-b border-white/5 ${row.best ? 'bg-primary/20 font-bold text-primary' : 'text-muted-foreground'}`}>
+                        <td className="py-2 px-4">{row.model}</td>
+                        <td className="py-2 px-4">{row.mse}</td>
+                        <td className="py-2 px-4">{row.rmse}</td>
+                        <td className="py-2 px-4">{row.mae}</td>
+                        <td className="py-2 px-4">{row.r2}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            {/* Key Findings Subsection */}
             <div className="bg-white/5 border border-white/10 rounded-xl p-8 space-y-4">
               <h3 className="text-xl font-semibold">Key Findings</h3>
               <ul className="space-y-3">
                 {[
-                  'Model accuracy increased as tree depth increased',
-                  'Feature importance: total discharge most influential, followed by storage volume and water level'
+                  'Random Forest significantly outperforms linear and polynomial models.',
+                  'Higher tree depth improves prediction accuracy.',
+                  'Total discharge, storage volume, and water level are the most influential features.',
+                  'Shows that nonlinear ML models better capture hydropower turbine discharge patterns.'
                 ].map((item, i) => (
                   <li key={i} className="flex gap-3 text-muted-foreground">
                     <BarChart3 className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
