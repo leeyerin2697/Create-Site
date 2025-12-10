@@ -681,6 +681,25 @@ function HydropowerMLContent({ project }: { project: any }) {
         {/* Divider */}
         <div className="h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
 
+        {/* Demonstration Section */}
+        <div className="space-y-8 animate-fade-in-up">
+          <div>
+            <h2 className="text-4xl font-bold mb-4">Demonstration</h2>
+            <div className="h-1 w-20 bg-gradient-to-r from-primary to-transparent rounded-full mb-8" />
+          </div>
+          <div className="max-w-3xl mx-auto space-y-6">
+            <p className="text-center text-muted-foreground">
+              <strong>Full Demonstration Video:</strong> 
+              <a href="https://youtu.be/LBqvcdxHdpE" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline ml-2">
+                Watch on YouTube
+              </a>
+            </p>
+          </div>
+        </div>
+
+        {/* Divider */}
+        <div className="h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
+
         {/* References Section */}
         <div className="space-y-8 animate-fade-in-up">
           <div>
