@@ -150,7 +150,10 @@ function ManualProcessingContent({ project }: { project: any }) {
           </div>
 
           <div className="space-y-6">
-            <p className="text-lg text-muted-foreground leading-relaxed">
+              <p className="text-sm text-muted-foreground leading-relaxed mb-4">
+                Author: Yerin Lee (20240381) | KENTECH, School of Energy Engineering
+              </p>
+              <p className="text-lg text-muted-foreground leading-relaxed">
               Many user manuals have small, dense text, making them difficult and tiring to read. Some manuals are also written in English, creating a language barrier for Korean users.
             </p>
 
@@ -199,8 +202,8 @@ function ManualProcessingContent({ project }: { project: any }) {
                   <div className="bg-primary/20 border border-primary/50 rounded-lg px-6 py-3 text-center font-semibold whitespace-nowrap">
                     {step}
                   </div>
-                  {i < 2 && <div className="hidden md:block h-px w-8 bg-primary/50 mx-2" />}
-                  {i < 2 && <div className="md:hidden h-8 w-px bg-primary/50 my-2" />}
+                  {i < 2 && <div className="hidden md:block h-px w-16 bg-primary/50 mx-2" />}
+                  {i < 2 && <div className="md:hidden h-16 w-px bg-primary/50 my-2" />}
                 </div>
               ))}
             </div>
