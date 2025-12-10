@@ -512,13 +512,13 @@ function HydropowerMLContent({ project }: { project: any }) {
             {/* Images */}
             <div className="grid grid-cols-3 gap-4">
               <div className="relative rounded-xl overflow-hidden border border-white/10 shadow-xl h-auto">
-                <img src="/images/project2-result-1.png" alt="Actual vs Predicted Scatter Plot" className="w-full h-full object-cover" />
+                <img src="/images/linear_actual_vs_pred.png" alt="Actual vs Predicted Scatter Plot" className="w-full h-full object-cover" />
               </div>
               <div className="relative rounded-xl overflow-hidden border border-white/10 shadow-xl h-auto">
-                <img src="/images/project2-result-2.png" alt="Feature Importance Ranking" className="w-full h-full object-cover" />
+                <img src="/images/polynomial_actual_vs_pred.png" alt="Feature Importance Ranking" className="w-full h-full object-cover" />
               </div>
               <div className="relative rounded-xl overflow-hidden border border-white/10 shadow-xl h-auto">
-                <img src="/images/project2-result-3.png" alt="Error Comparison Chart" className="w-full h-full object-cover" />
+                <img src="/images/random_forest_actual_vs_pred.png" alt="Error Comparison Chart" className="w-full h-full object-cover" />
               </div>
             </div>
 
