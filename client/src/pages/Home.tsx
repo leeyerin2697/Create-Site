@@ -21,7 +21,7 @@ export default function Home() {
         <section className="flex flex-col items-center text-center space-y-8 pt-20">
           <div className="relative w-40 h-40 rounded-full overflow-hidden border-4 border-white/10 shadow-2xl">
             <img 
-              src="/images/profile.jpg" 
+              src="/images/profile-image.jpg" 
               alt="Profile" 
               className="w-full h-full object-cover"
             />
