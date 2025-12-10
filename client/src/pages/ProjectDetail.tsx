@@ -506,7 +506,7 @@ function HydropowerMLContent({ project }: { project: any }) {
           <div className="space-y-6">
             {/* Overview Paragraph */}
             <p className="text-lg text-muted-foreground leading-relaxed">
-              The Random Forest Regressor significantly outperformed the simpler Linear and Polynomial Regression models, achieving a high predictive accuracy with an **R² value greater than 0.95**. The results showed that increasing the tree depth generally improved the model's accuracy. Furthermore, the feature importance analysis clearly identified **total discharge, storage volume, and water level** as the top three most influential factors in predicting turbine discharge.
+              The Random Forest Regressor significantly outperformed the simpler Linear and Polynomial Regression models, achieving a high predictive accuracy with an R² value greater than 0.95. The results showed that increasing the tree depth generally improved the model's accuracy. Furthermore, the feature importance analysis clearly identified total discharge, storage volume, and water level as the top three most influential factors in predicting turbine discharge.
             </p>
 
             {/* Images */}
