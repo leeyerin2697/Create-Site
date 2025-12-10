@@ -481,7 +481,7 @@ function HydropowerMLContent({ project }: { project: any }) {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               {[
                 'Linear Regression',
-                'Polynomial Regression (degree = 2)',
+               - Polynomial Regression',
                 'Random Forest Regressor'
               ].map((model, i) => (
                 <div key={i} className="bg-background/50 border border-white/10 rounded-lg px-4 py-3 text-center font-semibold text-sm">
