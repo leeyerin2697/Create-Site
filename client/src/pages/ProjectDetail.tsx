@@ -255,6 +255,27 @@ function ManualProcessingContent({ project }: { project: any }) {
         {/* Divider */}
         <div className="h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
 
+        {/* Demonstration Section */}
+        <div className="space-y-8 animate-fade-in-up">
+          <div>
+            <h2 className="text-4xl font-bold mb-4">Demonstration</h2>
+            <div className="h-1 w-20 bg-gradient-to-r from-primary to-transparent rounded-full mb-8" />
+          </div>
+          <div className="max-w-3xl mx-auto space-y-6">
+            <img 
+              src="/images/project1-result-new.gif" 
+              alt="OCR-Based Manual Summarizer Demonstration GIF" 
+              className="w-full h-auto rounded-xl border border-white/10 shadow-2xl"
+            />
+            <p className="text-center text-muted-foreground">
+              <strong>Full Demonstration Video:</strong> 
+              <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline ml-2">
+                Watch on YouTube
+              </a>
+            </p>
+          </div>
+        </div>
+
         {/* Results Section */}
         <div className="space-y-8 animate-fade-in-up">
           <div>
