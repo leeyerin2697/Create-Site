@@ -97,7 +97,7 @@ export default function ProjectDetail() {
               </div>
             </div>
           ) : project.id === 'hydropower-ml' ? (
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="max-w-3xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="relative rounded-2xl overflow-hidden border border-white/10 shadow-2xl">
                 <img 
                   src="/images/project2-thumb.jpg" 
