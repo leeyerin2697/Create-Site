@@ -8,6 +8,7 @@ on:
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout 🛎️
         uses: actions/checkout@v4
@@ -19,11 +20,10 @@ jobs:
           cache: 'pnpm'
           cache-dependency-path: 'pnpm-lock.yaml'
 
-      - name: Install pnpm
-        uses: pnpm/action-setup@v3
-        with:
-          version: 8
-          run_install: false
+      - name: Enable corepack and prepare pnpm
+        run: |
+          corepack enable
+          corepack prepare pnpm@8.6.3 --activate
 
       - name: Install dependencies
         run: pnpm install
@@ -35,8 +35,8 @@ jobs:
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist/public
-          cname: leeyerin2697.github.io
-          # CNAME을 사용하지 않는 경우, 아래 주석을 해제하세요.
-          # publish_branch: gh-pages # 배포할 브랜치 이름
-          # destination_dir: . # 배포할 디렉토리 (루트)
+          publish_dir: ./dist
+          # If your build actually outputs to ./dist/public, change publish_dir to ./dist/public
+          # If you want to publish to a custom branch or directory, uncomment and set:
+          # publish_branch: gh-pages
+          # destination_dir: .
