@@ -269,7 +269,7 @@ function ManualProcessingContent({ project }: { project: any }) {
             />
             <p className="text-center text-muted-foreground">
               <strong>Full Demonstration Video:</strong> 
-              <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline ml-2">
+              <a href="https://youtu.be/SUHL4aNiLAk" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline ml-2">
                 Watch on YouTube
               </a>
             </p>

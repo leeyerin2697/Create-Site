@@ -89,7 +89,7 @@ export const projects: Project[] = [
     `,
     imageUrl: "/images/project1-thumb-1.jpg",
     tags: ["OCR", "NLP", "TTS", "Python", "Tesseract", "DeepSeek API"],
-    link: "https://github.com/leeyerin2697"
+    link: "https://github.com/leeyerin2697/ManualSummaryApp"
   },
   {
     id: "hydropower-ml",
