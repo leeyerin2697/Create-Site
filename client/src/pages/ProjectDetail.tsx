@@ -51,14 +51,14 @@ export default function ProjectDetail() {
               <h1 className="text-5xl md:text-6xl font-bold tracking-tight leading-tight">
                 {project.title}
               </h1>
-              {project.id === 'manual-processing' && (
-                <p className="text-sm text-muted-foreground italic">
-                  Author: Yerin Lee (20240381) | KENTECH, School of Energy Engineering
-                </p>
-              )}
               <p className="text-xl text-muted-foreground">
                 {project.description}
               </p>
+              {project.id === 'manual-processing' && (
+                <p className="text-sm text-muted-foreground italic mt-2">
+                  Author: Yerin Lee (20240381) | KENTECH, School of Energy Engineering
+                </p>
+              )}
               {project.id === 'hydropower-ml' && (
                 <p className="text-sm text-muted-foreground italic">
                   Author: Yerin Lee (20240381) | KENTECH, School of Energy Engineering
@@ -205,8 +205,8 @@ function ManualProcessingContent({ project }: { project: any }) {
                   <div className="bg-primary/20 border border-primary/50 rounded-lg px-6 py-3 text-center font-semibold whitespace-nowrap">
                     {step}
                   </div>
-                  {i < 2 && <div className="hidden md:block h-px w-full bg-primary/50" />}
-                  {i < 2 && <div className="md:hidden h-full w-px bg-primary/50" />}
+                  {i < 2 && <div className="hidden md:block h-px w-20 bg-primary/50 mx-2" />}
+                  {i < 2 && <div className="md:hidden h-20 w-px bg-primary/50 my-2" />}
                 </div>
               ))}
             </div>
