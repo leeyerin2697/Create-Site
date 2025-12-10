@@ -634,7 +634,7 @@ function HydropowerMLContent({ project }: { project: any }) {
                   <tbody>
                     {[
                       { model: 'Linear Regression', mse: 1933.24, rmse: 43.97, mae: 23.06, r2: 0.441 },
-                      { model: 'Polynomial Regression', mse: 1593.74, rmse: 39.92, mae: 19.73, r2: 0.539 },
+                      { model: 'Polynomial Regression (degree = 2)', mse: 1593.74, rmse: 39.92, mae: 19.73, r2: 0.539 },
                       { model: 'Random Forest', mse: 165.10, rmse: 12.85, mae: 5.17, r2: 0.952, best: true },
                     ].map((row, i) => (
                       <tr key={i} className={`border-b border-white/5 ${row.best ? 'bg-primary/20 font-bold text-primary' : 'text-muted-foreground'}`}>
